@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jadwal Sholat</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: #0f172a;
+        color: #e2e8f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        background: #1e293b;
+        padding: 30px;
+        border-radius: 20px;
+        width: 320px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    h2 {
+        margin: 0;
+        font-weight: 600;
+    }
+
+    .location {
+        font-size: 14px;
+        color: #94a3b8;
+        margin-bottom: 20px;
+    }
+
+    .time {
+        font-size: 28px;
+        margin-bottom: 5px;
+    }
+
+    .date {
+        font-size: 13px;
+        color: #94a3b8;
+        margin-bottom: 20px;
+    }
+
+    .item {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px solid #334155;
+    }
+
+    .item:last-child {
+        border-bottom: none;
+    }
+
+    .label {
+        color: #cbd5f5;
+    }
+
+    .value {
+        font-weight: 500;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Jadwal Sholat</h2>
+    <div class="location">Samarinda</div>
+
+    <div class="time" id="jam"></div>
+    <div class="date" id="tanggal"></div>
+
+    <!-- DATA DARI DJANGO -->
+    <div class="item"><span class="label">Subuh</span><span class="value">{{ subuh }}</span></div>
+    <div class="item"><span class="label">Dzuhur</span><span class="value">{{ dzuhur }}</span></div>
+    <div class="item"><span class="label">Ashar</span><span class="value">{{ ashar }}</span></div>
+    <div class="item"><span class="label">Maghrib</span><span class="value">{{ maghrib }}</span></div>
+    <div class="item"><span class="label">Isya</span><span class="value">{{ isya }}</span></div>
+
+</div>
+
+<script>
+// JAM REALTIME
+function updateJam() {
+    let now = new Date();
+    document.getElementById("jam").innerHTML =
+        now.toLocaleTimeString('id-ID');
+}
+setInterval(updateJam, 1000);
+
+// TANGGAL
+let today = new Date();
+document.getElementById("tanggal").innerHTML =
+    today.toLocaleDateString('id-ID', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+</script>
+
+</body>
+</html>
