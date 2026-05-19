@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tugas Video Kucing</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            text-align: center;
+            color: white;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://cdn2.thecatapi.com/images/MTY3ODIyMQ.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        .form-box {
+            margin-top: 80px;
+        }
+
+        input, textarea {
+            padding: 8px;
+            margin: 5px;
+            width: 200px;
+        }
+
+        button {
+            padding: 8px 15px;
+        }
+
+        .card {
+            background: white;
+            color: black;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .card img {
+            width: 200px;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Tugas Video Kucing</h1>
+    <p>Video 2.1 & 2.2</p>
+
+    <!-- FORM -->
+    <div class="form-box">
+        <form>
+            <div>
+                <input type="text" placeholder="Nama">
+            </div>
+
+            <div>
+                <input type="email" placeholder="Email">
+            </div>
+
+            <div>
+                <textarea placeholder="Pesan"></textarea>
+            </div>
+
+            <div>
+                <button>Kirim</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- CARD KUCING -->
+    <div class="container">
+        <h2>Galeri Kucing</h2>
+
+        <div style="display:flex; justify-content:center; flex-wrap:wrap;">
+
+            <div class="card">
+                <img src="https://cdn2.thecatapi.com/images/MTY3ODIyMQ.jpg">
+                <p>Kucing 1</p>
+            </div>
+
+            <div class="card">
+                <img src="https://cdn2.thecatapi.com/images/MTY3ODIyMQ.jpg">
+                <p>Kucing 2</p>
+            </div>
+
+            <div class="card">
+                <img src="https://cdn2.thecatapi.com/images/MTY3ODIyMQ.jpg">
+                <p>Kucing 3</p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
