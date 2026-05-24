@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin</title>
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        
+        <div class="sidebar">
+
+            <h2>My Blog</h2>
+
+            <a href="/home">Dashboard</a>
+            <a href="/kategori">Kategori</a>
+            <a href="/artikel">Artikel</a>
+
+       <div class="sidebar-profile">
+
+            <div class="user-info">
+                <span class="user-icon">👤</span>
+                <span>{{ request.user.username }}</span>
+            </div>
+
+            <a href="/logout/" class="logout-btn">
+                Logout
+            </a>
+
+        </div>
+
+        </div>
+
+        <div class="dashboard-content">
+
+            <h1>Dashboard Admin</h1>
+
+            <p>
+                Selamat datang di halaman admin blogging.
+            </p>
+
+            <div class="card-container">
+
+                <div class="card">
+                    <h3>Kategori</h3>
+                    <p>Kelola kategori artikel blog.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Artikel</h3>
+                    <p>Kelola artikel blogging.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

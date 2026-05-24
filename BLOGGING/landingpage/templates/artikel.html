@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artikel</title>
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <div class="sidebar">
+
+        <h2>My Blog</h2>
+
+        <a href="/home">Dashboard</a>
+        <a href="/kategori">Kategori</a>
+        <a href="/artikel">Artikel</a>
+        
+
+    </div>
+
+    <div class="dashboard-content">
+
+        <h1>Data Artikel</h1>
+
+        <br>
+
+        <a href="/tambah-artikel" class="tambah-btn">
+            + Tambah Artikel
+        </a>
+
+        <br><br>
+
+        <table class="kategori-table">
+
+            <tr>
+                <th>No</th>
+                <th>Judul</th>
+                <th>Kategori</th>
+                <th>Status</th>
+                <th>Aksi</th>
+            </tr>
+
+            {% for a in artikel %}
+
+            <tr>
+
+                <td>{{ forloop.counter }}</td>
+
+                <td>{{ a.judul }}</td>
+
+                <td>{{ a.kategori.nama }}</td>
+
+                <td>
+
+                    {% if a.status %}
+
+                        Aktif
+
+                    {% else %}
+
+                        Tidak Aktif
+
+                    {% endif %}
+
+                </td>
+
+                <td>
+
+                    <a href="/edit-artikel/{{ a.id }}" class="edit-btn">
+                        Edit
+                    </a>
+
+                    <a href="/hapus-artikel/{{ a.id }}" class="hapus-btn">
+                        Hapus
+                    </a>
+
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>

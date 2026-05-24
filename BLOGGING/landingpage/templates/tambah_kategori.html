@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Kategori</title>
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <div class="sidebar">
+
+        <h2>My Blog</h2>
+
+        <a href="/home">Dashboard</a>
+        <a href="/kategori">Kategori</a>
+        <a href="/artikel">Artikel</a>
+        
+
+    </div>
+
+    <div class="dashboard-content">
+
+        <h1>Tambah Kategori</h1>
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <div class="input-box">
+                <label>Nama Kategori</label>
+                <input type="text" name="nama" placeholder="Masukkan kategori">
+            </div>
+
+            <button type="submit" class="btn">
+                Simpan
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

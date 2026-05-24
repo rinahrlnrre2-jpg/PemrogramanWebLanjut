@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+    <div class="login-box">
+
+        <h2>Create Account</h2>
+
+        <p class="desc">
+            Silakan daftar akun baru
+        </p>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <div class="input-box">
+                <label>Full Name</label>
+                <input type="text" name="fullname" placeholder="Masukkan nama" required>
+            </div>
+
+            <div class="input-box">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Masukkan email" required>
+            </div>
+
+            <div class="input-box">
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Masukkan username" required>
+            </div>
+
+            <div class="input-box">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Masukkan password" required>
+            </div>
+
+            <button type="submit" class="btn">
+                Register
+            </button>
+
+            <div class="register">
+                Sudah punya akun?
+                <a href="/">Login</a>
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
